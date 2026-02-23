@@ -22,7 +22,8 @@
   "homepage": "https://github.com/KleberAr4uj0/url-shortener#readme",
   "dependencies": {
     "express": "^5.2.1",
-    "helmet": "^8.1.0"
+    "helmet": "^8.1.0",
+    "joi": "^18.0.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
