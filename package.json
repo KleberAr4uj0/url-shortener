@@ -21,14 +21,17 @@
   },
   "homepage": "https://github.com/KleberAr4uj0/url-shortener#readme",
   "dependencies": {
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
-    "joi": "^18.0.2"
+    "joi": "^18.0.2",
+    "pg": "^8.18.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/helmet": "^0.0.48",
     "@types/node": "^25.3.0",
+    "@types/pg": "^8.16.0",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
