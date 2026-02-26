@@ -1,4 +1,5 @@
 import { UrlRepository } from "../repository/url-repository";
+import { Url } from "../interfaces/url";
 
 export class UrlService {
     constructor(private urlRepository: UrlRepository) { }
@@ -10,6 +11,11 @@ export class UrlService {
             const randomIndex = Math.floor(Math.random() * characters.length);
             code += characters.charAt(randomIndex);
         }
+        return code;
+    }
+    async generateShortUrl(Url: Url): Promise<string> {
+        const code = await this.generateCode();
+        await this.urlRepository.insertUrl(Url, code);
         return code;
     }
 }
