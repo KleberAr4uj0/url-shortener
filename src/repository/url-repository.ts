@@ -16,4 +16,9 @@ export class UrlRepository {
         return result.rows[0].url;
         
     }
+    async insertUrl(url: Url,code: string): Promise<void> {
+        const query = "INSERT INTO urls (url, short_url) VALUES ($1, $2)";
+        const values = [url.url, code];
+        await pool.query(query, values);
+    }
 }
