@@ -1,5 +1,8 @@
 import { UrlRepository } from "../repository/url-repository";
 import { Url } from "../interfaces/url";
+import { ShortUrl } from "../interfaces/shorrt-url";
+import { NotFoundError } from "../error/error";
+
 
 export class UrlService {
     constructor(private urlRepository: UrlRepository) { }
@@ -17,5 +20,13 @@ export class UrlService {
         const code = await this.generateCode();
         await this.urlRepository.insertUrl(Url, code);
         return code;
+    }
+    async getOriginalUrl(ShortUrl: ShortUrl): Promise<string>{
+        const url = await this.urlRepository.selectUrl(ShortUrl);
+
+        if(!url){
+            throw new NotFoundError("URL not found");
+        }
+        return url;
     }
 }
