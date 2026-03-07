@@ -1,11 +1,13 @@
 import helmet from 'helmet';
-import  Express, { Router }  from 'express';
+import express from 'express';
+import Router from './routes/router';
+import pool from './database/database';
 import { errorMiddleware } from './middleware/error-middleware';
 
-const app = Express();
+const app = express();
 
 app.use(helmet());
-app.use(Express.json());
+app.use(express.json());
 app.use(Router);
 app.use(errorMiddleware);
 
