@@ -22,11 +22,14 @@ The application uses **Helmet** to automatically configure several **HTTP securi
 
 The project follows a layered architecture:
 
+* **Routes** → define the API endpoints and connect them to controllers
 * **Controller** → handles HTTP requests and responses
 * **Service** → contains the business logic
 * **Repository** → manages database access
+* **Database** → PostgreSQL stores the URL data
 * **Middleware** → request validation and error handling
 * **Schema** → validation schemas using Joi
+* **Interfaces** → define TypeScript types and contracts used across the application
 
 ## 📌 Endpoints
 
@@ -71,4 +74,5 @@ npm run dev
 ## 📄 License
 
 This project was developed for study purposes.
+
 
