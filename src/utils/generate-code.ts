@@ -1,9 +1,10 @@
-export async function generateCode(): Promise<string> {
-        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        let code = "";
-        for (let i = 0; i < 6; i++) {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            code += characters.charAt(randomIndex);
-        }
-        return code;
-    }
+import { customAlphabet } from "nanoid"
+
+
+const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const nanoid = customAlphabet(characters, 6)
+
+export async  function generateCode (): Promise<string> {
+    const code = nanoid()
+    return code
+}
