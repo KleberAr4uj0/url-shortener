@@ -12,6 +12,7 @@ The application allows users to create a shortened URL and redirect to the origi
 * Joi (data validation)
 * express-async-handler (async error handling)
 * Helmet (HTTP security headers)
+* nanoid (short unique ID generator)
 * Git
 
 ## 🔐 Security
